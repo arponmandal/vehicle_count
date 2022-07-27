@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+  .output_text{
+   color: aliceblue;
+  }
+</style>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
@@ -8,12 +13,12 @@
   <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
-<body>
-  <nav style="background-color: #32a84a" class="lighten-1"  role="navigation" style="height: 100px">
+<body style="background-color: rgb(9, 9, 9);">
+  <nav style="background-color: #aa2a03" class="lighten-1"  role="navigation" style="height: 100px">
     <div class="nav-wrapper container">
       <a id="logo-container" class="brand-logo center"><h5>Vehicle Detection-Count-Classification App</h5></a>
       <div style="margin-left: 800px">
-      	   Made by <a class="orange-text text-lighten-3">Pianalytix</a>
+      	   Made by <a class="green-text text-lighten-3">ArponMandal</a>
       </div>
     </div>
   </nav>
@@ -31,18 +36,18 @@
                   <div class="row">
                     <label for="first_name"><b>Upload Image</b></label><br>
                     <div class = "file-field input-field">
-                      <div class = "btn" style="background-color: #32a84a">
+                      <div class = "btn" style="background-color: #082b63">
                         <span>Browse</span>
                         <input type = "file" name="image_upload" id="image_upload" />
                       </div>
                       <div class = "file-path-wrapper">
-                        <input class = "file-path validate" type = "text" placeholder = "Upload Image" name="image_name" id="image_name" />
+                        <input style="color: white;" class = "file-path validate" type = "text" placeholder = "Upload Image" name="image_name" id="image_name" />
                       </div>
                     </div>
                   </div>
 
                   <div class="row center" style="margin-top: 50px">
-                    <button id="submit" type="submit" class="btn-large" style="background-color: #32a84a">Process</button>
+                    <button id="submit" type="submit" class="btn-large" style="background-color: #066111">Process</button>
                   </div>
 
               </div>
@@ -51,9 +56,9 @@
             <div class="input-field col s3">
               <div style="text-align: center; padding-top: 50px; margin-left: 100px">
                 <img src="{{ url_for('static',filename=full_filename) }}" width="500" height="300">
-              </div>
+              </div >
               {% if pred != None %}
-              <div style="width: 500px; margin-left: 100px; text-align: center;" >
+              <div style="width: 500px; margin-left: 100px; text-align: center;" class="output_text" >
                 <h5>{{ pred }}</h5>
               </div>
               {% endif %}
@@ -66,6 +71,18 @@
 
   </div>
   </div>
+
+  <p style="text-align: center;padding-top: 50px; color: aliceblue; ">
+
+    Hello and welcome to this project on vehicle detection and counting.This project will be working on detecting and counting the number of vehicles in a given image  or video file.
+
+  </p>
+
+  <p style="text-align: center;padding-bottom: 50px; color: aliceblue; ">
+
+    Tool Used : OpenCv , CV2 , Flask , Numpy
+
+  </p>
 
   <!--  Scripts-->
   <script src="./static/js/materialize.js"></script>
